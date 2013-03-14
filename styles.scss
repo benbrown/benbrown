@@ -212,6 +212,11 @@
 			width: 90%;
 			max-width: 600px;
 			margin: 0px auto 50px;
+			border-bottom: 1px dashed $secondary_color;
+			
+			p.meta {
+				font-size: 0.8em;
+			}
 	
 			&.video {
 				

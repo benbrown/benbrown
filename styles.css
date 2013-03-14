@@ -139,7 +139,10 @@ ol#posts {
   ol#posts .post {
     width: 90%;
     max-width: 600px;
-    margin: 0px auto 50px; }
+    margin: 0px auto 50px;
+    border-bottom: 1px dashed #cccccc; }
+    ol#posts .post p.meta {
+      font-size: 0.8em; }
     ol#posts .post.video {
       max-width: none; }
       ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe {
