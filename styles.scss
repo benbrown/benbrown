@@ -64,6 +64,34 @@
 			text-decoration: none;
 		}
 
+		header nav ul {
+			list-style-type: none;
+			margin:0px;
+			padding:0px;
+			position:absolute;
+			right: 0px;
+			top: 0px;
+		}
+		
+		header nav ul li { 
+			float: left; 
+			margin-left: 10px;
+		}
+		
+		header nav ul li a {
+			display: block;
+			border-top: 5px solid $secondary_color;
+			color: $spot_color;
+			text-decoration: none;
+			font-weight: bold;
+			padding-top: 5px; 
+		}
+		
+		header nav ul li.active a {
+			border-top-color: $spot_color;
+		}
+
+
 		header#header {
 			background-color: $spot_color;
 			padding-top: 20%;
@@ -169,7 +197,7 @@
 	}
 
 	header#blog_header {
-
+			position: relative; 
 			width: 90%;
 			max-width: 600px;
 			margin: 0px auto;
