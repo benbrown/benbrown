@@ -133,7 +133,7 @@ ol#posts {
   ol#posts .post {
     width: 90%;
     max-width: 600px;
-    margin: 0px auto; }
+    margin: 0px auto 50px; }
     ol#posts .post.video {
       max-width: none; }
       ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe {
