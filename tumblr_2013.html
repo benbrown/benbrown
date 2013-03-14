@@ -4,11 +4,9 @@
         <title>{Title}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-<!--
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
--->
 
         <link rel="stylesheet" type="text/css" href="styles.css" />
         
@@ -165,8 +163,8 @@
 					{block:Link}
 						<li class="post link">
 							<div class="link">
-							Click on:
-							<a href="{URL}" class="link" {Target}>{Name}</a>
+							
+							<h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
 							</div>
 							{block:Description}
 								<div class="description">{Description}</div>

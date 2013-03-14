@@ -115,7 +115,8 @@ ul {
 header#blog_header {
   width: 90%;
   max-width: 600px;
-  margin: 0px auto; }
+  margin: 0px auto;
+  border-bottom: 1px dashed #cccccc; }
   header#blog_header img {
     width: 25%;
     margin-right: 2.5%;
