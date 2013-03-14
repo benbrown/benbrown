@@ -151,6 +151,8 @@ header#blog_header {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px dashed #cccccc; }
+  header#blog_header p {
+    margin-top: 0; }
   header#blog_header img {
     width: 25%;
     margin-right: 2.5%;
