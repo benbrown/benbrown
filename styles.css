@@ -204,7 +204,8 @@ ul.tags {
   margin: 0;
   padding: 0; }
   ul.tags li {
-    display: inline-block; }
+    display: inline-block;
+    margin-bottom: 5px; }
     ul.tags li a {
       display: block;
       padding: 5px;
