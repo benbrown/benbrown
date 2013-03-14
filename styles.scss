@@ -55,7 +55,8 @@
 			content:"\00bb"; 
 		}
 		
-		h2:before {
+		h2:before,
+		#blog h1:before {
 			content:"\00bb  "; 
 		}
 

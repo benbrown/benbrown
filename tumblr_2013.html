@@ -8,7 +8,7 @@
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
 
-        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://benbrown.com/home/styles.css" />
         
     </head>
     <body>
@@ -24,15 +24,21 @@
 
 			<header id="blog_header">
 				
-				<img src="http://benbrown.com/home/img/benbrown.png" alt="Ben Brown" />
+				<a href="/"><img src="http://benbrown.com/home/img/benbrown.png" alt="Ben Brown" border="0" /></a>
 				<p>
 					I'm the CEO of <a href="http://xoxco.com/">XOXCO</a> - a product designer and developer passionate about digital publishing, online community, and software design. On the web since 1996!				
 				</p>
 				<p><a href="http://benbrown.com/">Learn more about me at benbrown.com</a></p>
+
 				<div class="clearer"></div>
 			</header>
 
 			<ol id="posts">
+				{block:TagPage}
+				<li class="post">
+		            <h1>Posts tagged <strong>{Tag}</strong></h1>
+				</li>
+		        {/block:TagPage}
 				{block:PermalinkPage} 
 					{block:PermalinkPagination}
 					<li class="post" id="pagination">
