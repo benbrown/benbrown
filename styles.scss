@@ -1,0 +1,197 @@
+		$spot_color: #6666b7;
+		$secondary_color: #CCC;
+		
+
+		@mixin content {
+			width: 90%;
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@mixin content_small {
+			width: auto;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		
+		@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+		
+		body { 
+			margin:0;
+			padding:0;
+			font-family: 'georgia';
+			font-size: 18px;
+			color: #333;
+			background-color: #F0F0F0;
+		}
+		
+		img {
+			max-width: 100%;
+			
+			&.leftAlign {
+				width: 25%;
+				float: left;
+				margin-right: 5%;
+			}
+
+			&.rightAlign {
+				width: 25%;
+				float: right;
+				margin-left: 5%;
+			}
+			
+		}
+		
+		
+		
+		h1,h2,h3,h4,h5 { 
+			font-family: 'Arimo', 'Helvetica', 'Sans Serif';
+			font-weight: 700;
+		}
+		
+		h1:before {
+			content:"\00bb"; 
+		}
+		
+		h2:before {
+			content:"\00bb  "; 
+		}
+
+		a { 
+			color: $spot_color;
+			text-decoration: none;
+		}
+
+		header#header {
+			background-color: $spot_color;
+			padding-top: 20%;
+			padding-bottom: 2%;
+			color: #FFF;			
+			position: relative;
+			border-bottom: 10px solid $spot_color;
+
+			
+			canvas#canvas {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				z-index:1;				
+			}
+
+			h1 {
+				@include content;
+				position: relative;
+				margin-top:0;
+				margin-bottom:0;
+				text-transform: uppercase;
+				font-size: 6em;
+				text-align: left;
+				text-shadow: 0px 0px 5px rgba(0,0,0,1);
+				z-index:2000;
+			}
+			
+
+		}
+		
+		div#main { 
+
+				@include content;
+				
+				section:first-child p:first-child {
+					font-size: 1.1em;
+					line-height: 150%;
+				}
+
+				section {
+					width: 30%;
+					margin-right: 5%;
+					float: left;
+					padding-bottom: 30px;
+				}
+				
+				section:nth-of-type(3n) {
+					margin-right: 0%;
+				}
+
+		}
+
+		p {
+			line-height: 135%;
+		}
+		
+		li {
+			line-height: 150%;
+		}
+		
+		ul { 
+			list-style-type: square;
+			list-style-position: inside;
+			margin: 0;
+			padding:0;
+			padding-left: 10px;
+		}
+		
+		.clearer {
+			width: 100%;
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		
+		.break {
+			@extend .clearer;
+			width: 70%;
+			margin: 20px auto;
+			
+			border-top: 1px dashed $secondary_color;
+			
+		}
+		
+		#art img {
+			border: 5px solid $secondary_color;
+		}
+		
+		#footer {
+			font-size: 0.8em;
+			padding: 30px 0px;
+			text-align: center;
+		}
+		
+		@media all and (max-width: 768px) {
+		
+			.break { 
+				border-top: 0;
+				margin: 0px;
+				width: 100%;				
+			}
+			div#main {
+				@include content_small;			
+					
+				section {
+					width: auto;
+					margin: 0;
+					float: none;
+					border-bottom: 1px solid $secondary_color;
+					
+				}
+			}
+			
+			header#header h1 {
+				@include content_small;
+			
+
+				font-size: 3em;
+			}
+			
+		}
+		
+		@media all and (max-width: 480px) {
+			body {
+				font-size: 16px;
+				
+			}
+		}
+		
