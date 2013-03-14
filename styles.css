@@ -136,11 +136,13 @@ ol#posts {
     margin: 0px auto; }
     ol#posts .post.video {
       max-width: none; }
-      ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video {
-        margin: 0px auto; }
+      ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe {
+        margin: 0px auto;
+        display: block; }
     ol#posts .post.photo {
       max-width: none; }
       ol#posts .post.photo img {
+        display: block;
         margin: 0px auto; }
     ol#posts .post .text {
       width: 90%;

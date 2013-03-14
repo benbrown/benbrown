@@ -201,8 +201,9 @@
 				
 				max-width: none;
 				
-				embed,object,video {
+				embed,object,video,iframe {
 					margin: 0px auto;
+					display: block;
 				}
 				
 			}
@@ -212,6 +213,7 @@
 				max-width: none;
 				
 				img {
+					display: block;
 					margin: 0px auto;
 				}
 				
