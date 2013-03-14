@@ -34,9 +34,6 @@ a {
 
 nav {
   border-top: 5px solid #cccccc;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 90%;
   max-width: 1000px;
   margin: 0px auto; }
@@ -142,14 +139,13 @@ ul {
 
 /* Blog Stuff */
 #blog {
-  padding-top: 50px;
   position: relative; }
 
 header#blog_header {
-  position: relative;
   width: 90%;
   max-width: 600px;
   margin: 0px auto;
+  padding-top: 50px;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px dashed #cccccc; }
