@@ -73,6 +73,7 @@
 						<li class="post photo">
 							{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
 	
+							<div class="text">
 							{block:Caption}
 								<div class="caption">{Caption}</div>
 							{/block:Caption}
@@ -94,7 +95,7 @@
 								<div class="clear"></div>
 
 							{/block:HasTags}
-
+							</div>
 
 						</li>
 					{/block:Photo}
@@ -103,6 +104,7 @@
 						<li class="post photoset">
 							{Photoset-500}
 	
+							<div class="text">
 							{block:Caption}
 								<div class="caption">{Caption}</div>
 							{/block:Caption}
@@ -124,6 +126,7 @@
 								<div class="clear"></div>
 
 							{/block:HasTags}
+							</div>
 
 
 						</li>
@@ -132,7 +135,6 @@
 					{block:Quote}
 						<li class="post quote">
 							<blockquote>
-								<span class="q">&ldquo;</span>
 								{Quote}
 							</blockquote>
 	
@@ -237,8 +239,9 @@
 	
 					{block:Video}
 						<li class="post video">
-							{Video-500}
+							{VideoEmbed-700}
 	
+							<div class="text">
 							{block:Caption}
 								<div class="caption">{Caption}</div>
 							{/block:Caption}
@@ -261,7 +264,7 @@
 								<div class="clear"></div>
 
 							{/block:HasTags}
-
+							</div>
 						</li>
 					{/block:Video}
 	

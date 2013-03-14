@@ -135,11 +135,17 @@ ol#posts {
     max-width: 600px;
     margin: 0px auto; }
     ol#posts .post.video {
-      max-width: 1000px; }
+      max-width: none; }
       ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video {
         margin: 0px auto; }
     ol#posts .post.photo {
-      max-width: 1000px; }
+      max-width: none; }
+      ol#posts .post.photo img {
+        margin: 0px auto; }
+    ol#posts .post .text {
+      width: 90%;
+      max-width: 600px;
+      margin: 0px auto; }
 
 ul#likes {
   list-style-type: none;

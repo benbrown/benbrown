@@ -199,7 +199,7 @@
 	
 			&.video {
 				
-				max-width: 1000px;
+				max-width: none;
 				
 				embed,object,video {
 					margin: 0px auto;
@@ -209,8 +209,18 @@
 
 			&.photo {
 				
-				max-width: 1000px;
+				max-width: none;
 				
+				img {
+					margin: 0px auto;
+				}
+				
+			}
+			
+			.text {
+				width: 90%;
+				max-width: 600px;
+				margin: 0px auto;				
 			}
 
 		}	
