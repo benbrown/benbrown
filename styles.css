@@ -34,9 +34,11 @@ a {
 
 nav {
   border-top: 5px solid #cccccc;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 90%;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0px auto; }
 
 nav ul {
