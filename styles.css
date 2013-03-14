@@ -201,6 +201,8 @@ ol#posts {
         font-size: 1.2em;
         line-height: 150%;
         color: #666666; }
+    ol#posts .post.navigation {
+      border-bottom: 0; }
     ol#posts .post .text {
       width: 90%;
       max-width: 600px;
