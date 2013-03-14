@@ -32,6 +32,13 @@ a {
   color: #6666b7;
   text-decoration: none; }
 
+nav {
+  border-top: 5px solid #cccccc;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 0px auto; }
+
 nav ul {
   list-style-type: none;
   margin: 0px;
@@ -133,7 +140,8 @@ ul {
 
 /* Blog Stuff */
 #blog {
-  padding-top: 50px; }
+  padding-top: 50px;
+  position: relative; }
 
 header#blog_header {
   position: relative;

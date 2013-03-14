@@ -63,6 +63,15 @@
 			color: $spot_color;
 			text-decoration: none;
 		}
+		
+		nav {
+			border-top: 5px solid $secondary_color;	
+			position: relative;
+			width: 90%;
+			max-width: 600px;
+			margin: 0px auto;
+
+		}
 
 		nav ul {
 			list-style-type: none;
@@ -193,7 +202,7 @@
 
 	#blog {
 		padding-top: 50px;
-		
+		position: relative;
 	}
 
 	header#blog_header {
