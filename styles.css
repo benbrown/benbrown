@@ -8,7 +8,8 @@ body {
   background-color: #F0F0F0; }
 
 img, object, embed, video, iframe {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto !important; }
   img.leftAlign, object.leftAlign, embed.leftAlign, video.leftAlign, iframe.leftAlign {
     width: 25%;
     float: left;

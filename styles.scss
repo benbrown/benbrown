@@ -29,6 +29,7 @@
 		
 		img,object,embed,video,iframe {
 			max-width: 100%;
+			height: auto !important;
 			
 			&.leftAlign {
 				width: 25%;
