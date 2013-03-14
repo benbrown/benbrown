@@ -144,6 +144,11 @@ ol#posts {
       ol#posts .post.photo img {
         display: block;
         margin: 0px auto; }
+    ol#posts .post.quote {
+      max-width: 1000px; }
+      ol#posts .post.quote blockquote {
+        font-size: 1.2em;
+        color: #cccccc; }
     ol#posts .post .text {
       width: 90%;
       max-width: 600px;
