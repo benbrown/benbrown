@@ -27,7 +27,7 @@
 			background-color: #F0F0F0;
 		}
 		
-		img {
+		img,object,embed,video,iframe {
 			max-width: 100%;
 			
 			&.leftAlign {
@@ -266,6 +266,7 @@
 				embed,object,video,iframe {
 					margin: 0px auto;
 					display: block;
+					max-width: 100%;
 				}
 				
 			}

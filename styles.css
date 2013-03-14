@@ -7,13 +7,13 @@ body {
   color: #333;
   background-color: #F0F0F0; }
 
-img {
+img, object, embed, video, iframe {
   max-width: 100%; }
-  img.leftAlign {
+  img.leftAlign, object.leftAlign, embed.leftAlign, video.leftAlign, iframe.leftAlign {
     width: 25%;
     float: left;
     margin-right: 5%; }
-  img.rightAlign {
+  img.rightAlign, object.rightAlign, embed.rightAlign, video.rightAlign, iframe.rightAlign {
     width: 25%;
     float: right;
     margin-left: 5%; }
@@ -181,7 +181,8 @@ ol#posts {
       max-width: none; }
       ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe {
         margin: 0px auto;
-        display: block; }
+        display: block;
+        max-width: 100%; }
     ol#posts .post.photo {
       max-width: none; }
       ol#posts .post.photo img {
