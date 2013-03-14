@@ -87,6 +87,8 @@
 			margin-left: 10px;
 		}
 		
+
+		
 		nav ul li a {
 			display: block;
 			border-top: 5px solid $secondary_color;
@@ -96,7 +98,8 @@
 			padding-top: 5px; 
 		}
 		
-		nav ul li.active a {
+		nav ul li.active a,
+		nav ul li:hover a {
 			border-top-color: $spot_color;
 			color: $spot_color;
 		}
@@ -316,9 +319,12 @@
 			a {
 				display: block;
 				padding: 5px;
-				background-color: $spot_color;
+				background-color: $secondary_color;
 				color: $spot_color_foreground;
-				
+			}
+			
+			a:hover {
+				background-color: $spot_color;
 			}
 		}
 	}

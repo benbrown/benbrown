@@ -59,7 +59,8 @@ nav ul li a {
   font-weight: bold;
   padding-top: 5px; }
 
-nav ul li.active a {
+nav ul li.active a,
+nav ul li:hover a {
   border-top-color: #6666b7;
   color: #6666b7; }
 
@@ -210,8 +211,10 @@ ul.tags {
     ul.tags li a {
       display: block;
       padding: 5px;
-      background-color: #6666b7;
+      background-color: #cccccc;
       color: white; }
+    ul.tags li a:hover {
+      background-color: #6666b7; }
 
 ul#likes {
   list-style-type: none;
