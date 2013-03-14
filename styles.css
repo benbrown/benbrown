@@ -148,11 +148,24 @@ ol#posts {
       max-width: 1000px; }
       ol#posts .post.quote blockquote {
         font-size: 1.2em;
-        color: #cccccc; }
+        line-height: 150%;
+        color: #666666; }
     ol#posts .post .text {
       width: 90%;
       max-width: 600px;
       margin: 0px auto; }
+
+ul.tags {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  ul.tags li {
+    display: inline-block; }
+    ul.tags li a {
+      display: block;
+      padding: 5px;
+      background-color: #6666b7;
+      color: white; }
 
 ul#likes {
   list-style-type: none;

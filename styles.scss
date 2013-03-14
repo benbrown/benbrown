@@ -1,6 +1,7 @@
 		$spot_color: #6666b7;
+		$spot_color_foreground: #FFF;
 		$secondary_color: #CCC;
-		
+		$pullquote_color: #666;
 
 		@mixin content {
 			width: 90%;
@@ -224,7 +225,8 @@
 				
 				blockquote {
 					font-size: 1.2em;
-					color: $secondary_color;
+					line-height: 150%;
+					color: $pullquote_color;
 					
 				}
 			}
@@ -237,6 +239,24 @@
 
 		}	
 		
+	}
+	
+	ul.tags { 
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline-block;
+			
+			a {
+				display: block;
+				padding: 5px;
+				background-color: $spot_color;
+				color: $spot_color_foreground;
+				
+			}
+		}
 	}
 
       ul#likes {
