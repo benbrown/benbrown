@@ -270,9 +270,11 @@
 				font-size: 0.8em;
 			}
 	
-			&.video {
+			&.video,
+			&.photoset {
 				
-				max-width: none;
+				max-width: 700px;
+				
 				
 				embed,object,video,iframe {
 					margin: 0px auto;

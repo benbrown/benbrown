@@ -185,9 +185,9 @@ ol#posts {
     border-bottom: 1px dashed #cccccc; }
     ol#posts .post p.meta {
       font-size: 0.8em; }
-    ol#posts .post.video {
-      max-width: none; }
-      ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe {
+    ol#posts .post.video, ol#posts .post.photoset {
+      max-width: 700px; }
+      ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video, ol#posts .post.video iframe, ol#posts .post.photoset embed, ol#posts .post.photoset object, ol#posts .post.photoset video, ol#posts .post.photoset iframe {
         margin: 0px auto;
         display: block;
         max-width: 100%; }
