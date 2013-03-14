@@ -64,7 +64,7 @@
 			text-decoration: none;
 		}
 
-		header nav ul {
+		nav ul {
 			list-style-type: none;
 			margin:0px;
 			padding:0px;
@@ -73,12 +73,12 @@
 			top: 0px;
 		}
 		
-		header nav ul li { 
+		nav ul li { 
 			float: left; 
 			margin-left: 10px;
 		}
 		
-		header nav ul li a {
+		nav ul li a {
 			display: block;
 			border-top: 5px solid $secondary_color;
 			color: $spot_color;
@@ -87,7 +87,7 @@
 			padding-top: 5px; 
 		}
 		
-		header nav ul li.active a {
+		nav ul li.active a {
 			border-top-color: $spot_color;
 		}
 
