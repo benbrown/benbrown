@@ -202,10 +202,11 @@ ol#posts {
 ul.tags {
   list-style-type: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 0.8em; }
   ul.tags li {
     display: inline-block;
-    margin-bottom: 5px; }
+    margin-bottom: 10px; }
     ul.tags li a {
       display: block;
       padding: 5px;
