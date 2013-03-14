@@ -35,8 +35,9 @@ a {
 nav {
   border-top: 5px solid #cccccc;
   width: 90%;
-  max-width: 1000px;
-  margin: 0px auto; }
+  max-width: 800px;
+  margin: 0px auto;
+  position: relative; }
 
 nav ul {
   list-style-type: none;
@@ -53,13 +54,14 @@ nav ul li {
 nav ul li a {
   display: block;
   border-top: 5px solid #cccccc;
-  color: #6666b7;
+  color: #cccccc;
   text-decoration: none;
   font-weight: bold;
   padding-top: 5px; }
 
 nav ul li.active a {
-  border-top-color: #6666b7; }
+  border-top-color: #6666b7;
+  color: #6666b7; }
 
 header#header {
   background-color: #6666b7;
