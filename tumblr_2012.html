@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <script src="http://xoxco.com/js/jquery.min.js"></script>
+        <script src="http://xoxco.com/x/scrapi/scrapi.js"></script>
+        
+        <style type="text/css">
+        
+        
+        	body { background: #F0F0F0; color: #333;  font-family: helvetica;}
+        	
+        	a { color: #EC008C; } 
+        	h1,h2,h3 { margin-top:0px; margin-bottom:10px;  color: #666;}
+        	p,li,blockquote,div { font-size: 16px; margin-top:0px; margin-bottom:10px; line-height: 150%; }
+
+			ol#posts { list-style-type: none; margin:0px; padding:0px; float: left; width:500px; margin-right:10px; padding-right:10px; border-right:1px solid #CCC;}
+			#posts li.post { display:block;padding:0px; margin:0px; margin-bottom:30px;  border-bottom:1px solid #CCC; padding-bottom:10px; } 
+			
+			#posts li.post:last-child { border-bottom:0px; } 
+			
+			div#wrapper { width:962px; margin-left: auto; margin-right: auto; } 
+			
+			
+			div.sidebar { float:left; width: 200px; margin-right:20px;  }
+			div.sidebar p, div.sidebar li,div.sidebar div { font-size:14px; }
+			
+			div.widgets { border-right:1px solid #CCC; margin-right:10px; padding-right:10px;} 
+			
+			blockquote { border-left: 2px solid #CCC; margin:0px; padding-left: 10px; }
+			.quote blockquote,div.link { margin:0px; font-size: 18px; background: #FFFFFF; padding:10px; margin-bottom:10px; border:0px; display:block;} 
+			
+			span.q { font-size: 50px; }
+			
+			p.meta { color: #CCC; font-size: 13px; }
+			ul.tags { list-style-type: none; padding:0px; margin:0px; }
+			ul.tags li { display:block; float: left; margin-right:10px; font-size:11px;}
+        
+        	ul.sidebar { list-style-type: none; padding:0px; margin:0px; }
+        	ul.sidebar li { display: block; } 
+        	
+        	.clear { clear: both; width: 100%; height:0px; }
+        	
+        	#header { font-size: 40px; text-align:center; padding:10px; border-bottom:1px solid #CCC; margin-bottom:40px;} 
+        	
+        	div.sidebar form { margin-bottom: 20px; }
+        	div.sidebar h3 { border-bottom: 1px solid #CCC; } 
+        	a.title { color: #333; text-decoration:none; } 
+        	
+        	.twtr-hd  { display: none; } 
+        	.twtr-ft { display: none; } 
+        	#flickr_www { display: none; } 
+        	
+        	a.older { float: right; }
+        	a.newer { float: left; } 
+        	
+        	#pagination { font-size: 11px; } 
+        	#pagination p { font-size: 11px; } 
+
+
+
+        ul#likes {
+            	list-style-type: none;
+            	margin: 0 0 0 0;
+            	padding: 0 0 0 0;
+            }
+
+                li.like_post {
+                    /* Should match the width specified in the Likes tag */
+                    width: 200px;
+                    padding: 0px;
+                    float: left;
+                    border-bottom: 1px solid #ccc;
+                }
+
+                  li.like_post img {
+                      max-width: 100%;
+                  }
+
+                  li.like_post blockquote {
+                      margin: 0;
+                      padding: 0 0 0 10px;
+                      border-left: 1px solid #eee;
+                  }
+
+                  li.like_post ol,
+                  li.like_post ul {
+                      margin: 0 0 0 15px;
+                      padding: 0;
+                  }
+
+                  li.like_post .like_link a {
+                      font-weight: bold;
+                  }
+
+                  li.like_post .like_title {
+                      font-weight: bold;
+                  }
+                  
+                  li.like_post .like_caption { display: none; }
+
+                  li.like_post .post_info_bottom {
+                      margin: 10px 0 0 0;
+                      display: block !important;
+                  }
+
+.grampa-image a img { margin: 0px auto; display:block;}
+.grampa-endorsement a { text-decoration: none; font-size: 11px;  }
+
+        </style>
+    </head>
+    <body>
+
+		<div id="header">
+				<h1>{Title}</h1>		
+		</div>
+		<div id="wrapper">
+			<ol id="posts">
+				{block:PermalinkPage} 
+					{block:PermalinkPagination}
+					<li class="post" id="pagination">
+						<p>
+							This is an individual post from <a href="/">Ben Brown's blog</a>.  Use the links below to navigate through the archives.
+						</p>
+						
+						{block:PreviousPost}<a class="newer" href="{PreviousPost}">&laquo; Previous</a>{/block:PreviousPost} 
+						{block:NextPost}<a class="older" href="{NextPost}">Next &raquo;</a>{/block:NextPost}
+						<div class="clear"></div>
+					</li>
+					{/block:PermalinkPagination}
+				{/block:PermalinkPage} 
+
+
+				{block:Posts}
+					{block:Text}
+						<li class="post text">
+							{block:Title}
+								<h3><a href="{Permalink}" class="title">{Title}</a></h3>
+							{/block:Title}
+	
+							{Body}
+
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+							{/block:HasTags}
+
+						</li>
+					{/block:Text}
+	
+					{block:Photo}
+						<li class="post photo">
+							{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Photo}
+					
+					{block:Photoset}
+						<li class="post photoset">
+							{Photoset-500}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Photoset}
+	
+					{block:Quote}
+						<li class="post quote">
+							<blockquote>
+								<span class="q">&ldquo;</span>
+								{Quote}
+							</blockquote>
+	
+							{block:Source}
+								<div class="source">{Source}</div>
+							{/block:Source}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Quote}
+	
+					{block:Link}
+						<li class="post link">
+							<div class="link">
+							Click on:
+							<a href="{URL}" class="link" {Target}>{Name}</a>
+							</div>
+							{block:Description}
+								<div class="description">{Description}</div>
+							{/block:Description}
+							
+								<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+								
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Link}
+	
+					{block:Chat}
+						<li class="post chat">
+							{block:Title}
+								<h3><a href="{Permalink}">{Title}</a></h3>
+							{/block:Title}
+	
+							<ul class="chat">
+								{block:Lines}
+									<li class="{Alt} user_{UserNumber}">
+										{block:Label}
+											<span class="label">{Label}</span>
+										{/block:Label}
+	
+										{Line}
+									</li>
+								{/block:Lines}
+							</ul>
+							
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Chat}
+	
+					{block:Video}
+						<li class="post video">
+							{Video-500}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Video}
+	
+					{block:Audio}
+						<li class="post audio">
+							{AudioPlayerBlack}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+							
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>							
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Audio}
+				{/block:Posts}
+				<li class="post">
+				
+					{block:PostNotes}
+						<a name="notes"></a>
+						<h3>Tumblr Notes</h3>
+						{PostNotes}
+					{/block:PostNotes}
+				
+				
+					{block:PreviousPage}
+						<a href="{PreviousPage}" class="newer">&#171; Previous</a>
+					{/block:PreviousPage}
+	
+					{block:NextPage}
+						<a href="{NextPage}" class="older">Next &#187;</a>
+					{/block:NextPage}
+					<div class="clear"></div>
+				</li>
+			</ol>
+			
+			
+					<div class="sidebar widgets">
+			
+                                <a href="http://ilovebenbrown.com/"><img src="http://25.media.tumblr.com/tumblr_lmajsxoKpK1qz4en5o1_500.png" width="200" /></a>
+
+
+				<h3>Liked on Tumblr</h3>
+		  {block:Likes}
+                {Likes limit="5" summarize="0" width="200"}
+        {/block:Likes}	
+
+				<h3>Recently on Flickr</h3>
+				
+						<!-- Start of Flickr Badge -->
+			<style type="text/css">
+			#flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+			#flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+			#flickr_icon_td {padding:0 5px 0 0 !important;}
+			.flickr_badge_image {text-align:center !important;}
+			.flickr_badge_image img {border: 1px solid black !important;}
+			#flickr_badge_uber_wrapper a:hover,
+			#flickr_badge_uber_wrapper a:link,
+			#flickr_badge_uber_wrapper a:active,
+			#flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+			#flickr_badge_wrapper {width:100%; text-align:center;}
+			#flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+			</style>
+			<table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+			<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=5&display=latest&size=t&layout=v&source=user&user=35034349275%40N01"></script>
+			</table>
+			</td></tr></table>
+			<!-- End of Flickr Badge -->
+			
+			
+				<h3>Recently on Twitter</h3>
+			
+			
+			
+			<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+			  version: 2,
+			  type: 'profile',
+			  rpp: 5,
+			  interval: 6000,
+			  width: 'auto',
+			  height: 300,
+			  theme: {
+				shell: {
+				  background: '#f0f0f0',
+				  color: '#333333'
+				},
+				tweets: {
+				  background: '#f0f0f0',
+				  color: '#333333',
+				  links: '#EC008C'
+				}
+			  },
+			  features: {
+				scrollbar: false,
+				loop: false,
+				live: false,
+				hashtags: true,
+				timestamp: true,
+				avatars: false,
+				behavior: 'all'
+			  }
+			}).render().setUser('benbrown').start();
+			</script>
+
+			
+			
+			
+
+		</div>
+
+			
+			
+			
+			
+			
+			
+			<div class="sidebar">
+			
+			<p>This site is <strong>a collection of art, writing, and photos by <a href="http://benbrown.com/">Ben Brown</a></strong>.</p>
+
+<p>
+I run <a href="http://xoxco.com/">XOXCO</a>, a product development firm in Austin, Texas. We build and design things, mostly software, for ourselves and for clients.
+</p>
+
+<p>
+    I live with my unbelievably talented and beautiful wife, <a href="http://yournewfavorite.com/">Katie Spence</a> and our <a href="http://ilovebenbrown.com/tagged/zeldaray">blue-eyed baby-child Zelda Ray.</a>
+</p>
+                            
+<p>
+    Right now, I am working on a series of generative art programs that run in my browser and on my iPad. I think math is beautiful. <a href="http://ilovebenbrown.com/tagged/generative-art">Read about that here.</a>
+</p>
+
+
+<p>
+    Last summer, I built <a href="http://makepixelart.com/">Make Pixel Art</a> and
+    <a href="http://app2.it/pixelpix">PixelPix</a>, tools for making
+    tiny drawings on your iPhone and iPad.
+</p>
+
+
+<p>I have been posting to my personal website since 1995!</p>
+
+			<p><a href="/archive">View the archives</a>.</p>
+				
+			
+				<h3>Subscribe</h3>
+				<ul class="sidebar">
+					<li><a href="http://tumblr.com/follow/benbrown">Follow on Tumblr</a></li>
+					<li><a href="http://mlkshk.com/user/benbrown">Follow on MLKSHK</a></li>
+					<li><a href="Http://twitter.com/benbrown">Follow on Twitter</a></li>
+					<li><a href="http://flickr.com/photos/benbrown">Follow on Flickr</a>
+					<li><a href="http://feeds.feedburner.com/BenBrownSays">RSS Feed</a></li>
+				</ul>
+	
+				<h3>Search</h3>
+				<form action="/search" method="get" class="searchform"><input class="input" type="text" name="q" value=""/> <input class="button" type="submit" value="Search"/></form>
+				
+				<h3>More Ben Brown</h3>
+				
+				<ul class="sidebar">
+					<li><a href="http://xoxco.com/">XOXCO</a> - my company!</li>
+					<li><a href="http://peoplepods.net/">PeoplePods</a> - my social software toolkit</li>
+				</ul>
+				
+				<h3>Links</h3>		
+				
+				<ul class="sidebar">
+					<li><a href="http://yournewfavorite.com/">Katie Spence</a></li>
+					<li><a href="http://dakotasmith.org/">Dakota Smith</a></li>
+					<li><a href="http://trenchant.org/">Adam Mathes</a></li>
+					<li><a href="http://mustsharehair.tumblr.com/">Must Share Hair</a></li>
+				</ul>
+	
+	
+			</div>
+			<div class="clear"></div>
+			<div id="footer">
+				all content copyright ben brown 2010 
+				&middot; powered by <a href="htt://tumblr.com/">Tumblr</a>
+			</div>
+		</div>
+		
+	
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-84020-17']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>		
+
+    </body>
+</html>

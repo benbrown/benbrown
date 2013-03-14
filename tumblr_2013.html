@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+        <link rel="stylesheet" type="text/css" href="http://benbrown.com/home/styles.css" />
+        
+    </head>
+    <body>
+    
+		<div id="blog">
+			<header id="blog_header">
+					<h1>{Title}</h1>		
+			</header>
+
+			<ol id="posts">
+				{block:PermalinkPage} 
+					{block:PermalinkPagination}
+					<li class="post" id="pagination">
+						<p>
+							This is an individual post from <a href="/">Ben Brown's blog</a>.  Use the links below to navigate through the archives.
+						</p>
+						
+						{block:PreviousPost}<a class="newer" href="{PreviousPost}">&laquo; Previous</a>{/block:PreviousPost} 
+						{block:NextPost}<a class="older" href="{NextPost}">Next &raquo;</a>{/block:NextPost}
+						<div class="clear"></div>
+					</li>
+					{/block:PermalinkPagination}
+				{/block:PermalinkPage} 
+
+
+				{block:Posts}
+					{block:Text}
+						<li class="post text">
+							{block:Title}
+								<h3><a href="{Permalink}" class="title">{Title}</a></h3>
+							{/block:Title}
+	
+							{Body}
+
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+							{/block:HasTags}
+
+						</li>
+					{/block:Text}
+	
+					{block:Photo}
+						<li class="post photo">
+							{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Photo}
+					
+					{block:Photoset}
+						<li class="post photoset">
+							{Photoset-500}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Photoset}
+	
+					{block:Quote}
+						<li class="post quote">
+							<blockquote>
+								<span class="q">&ldquo;</span>
+								{Quote}
+							</blockquote>
+	
+							{block:Source}
+								<div class="source">{Source}</div>
+							{/block:Source}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Quote}
+	
+					{block:Link}
+						<li class="post link">
+							<div class="link">
+							Click on:
+							<a href="{URL}" class="link" {Target}>{Name}</a>
+							</div>
+							{block:Description}
+								<div class="description">{Description}</div>
+							{/block:Description}
+							
+								<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+								
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Link}
+	
+					{block:Chat}
+						<li class="post chat">
+							{block:Title}
+								<h3><a href="{Permalink}">{Title}</a></h3>
+							{/block:Title}
+	
+							<ul class="chat">
+								{block:Lines}
+									<li class="{Alt} user_{UserNumber}">
+										{block:Label}
+											<span class="label">{Label}</span>
+										{/block:Label}
+	
+										{Line}
+									</li>
+								{/block:Lines}
+							</ul>
+							
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+							
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+
+						</li>
+					{/block:Chat}
+	
+					{block:Video}
+						<li class="post video">
+							{Video-500}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Video}
+	
+					{block:Audio}
+						<li class="post audio">
+							{AudioPlayerBlack}
+	
+							{block:Caption}
+								<div class="caption">{Caption}</div>
+							{/block:Caption}
+							
+							<p class="meta">
+							posted {block:Date}{TimeAgo} on {ShortMonth} {DayOfMonth}, {Year} {/block:Date}
+							| <a href="{Permalink}">Permalink</a>
+							{block:NoteCount}
+							| <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+							</p>							
+
+							{block:HasTags}
+								<ul class="tags">
+									{block:Tags}
+										<li>
+											<a href="{TagURL}">#{Tag}</a>
+										</li>
+									{/block:Tags}
+								</ul>
+								<div class="clear"></div>
+
+							{/block:HasTags}
+
+						</li>
+					{/block:Audio}
+				{/block:Posts}
+				<li class="post">
+				
+					{block:PostNotes}
+						<a name="notes"></a>
+						<h3>Tumblr Notes</h3>
+						{PostNotes}
+					{/block:PostNotes}
+				
+				
+					{block:PreviousPage}
+						<a href="{PreviousPage}" class="newer">&#171; Previous</a>
+					{/block:PreviousPage}
+	
+					{block:NextPage}
+						<a href="{NextPage}" class="older">Next &#187;</a>
+					{/block:NextPage}
+					<div class="clear"></div>
+				</li>
+			</ol>
+		</div>
+		
+	
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-84020-17']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>		
+
+    </body>
+</html>

@@ -108,6 +108,54 @@ ul {
   padding: 30px 0px;
   text-align: center; }
 
+/* Blog Stuff */
+#blog .post {
+  width: 90%;
+  max-width: 600px;
+  margin: 0px auto; }
+  #blog .post.video {
+    max-width: 1000px; }
+  #blog .post.photo {
+    max-width: 1000px; }
+
+ul#likes {
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0; }
+
+li.like_post {
+  /* Should match the width specified in the Likes tag */
+  width: 200px;
+  padding: 0px;
+  float: left;
+  border-bottom: 1px solid #cccccc; }
+
+li.like_post img {
+  max-width: 100%; }
+
+li.like_post blockquote {
+  margin: 0;
+  padding: 0 0 0 10px;
+  border-left: 1px solid #eeeeee; }
+
+li.like_post ol,
+li.like_post ul {
+  margin: 0 0 0 15px;
+  padding: 0; }
+
+li.like_post .like_link a {
+  font-weight: bold; }
+
+li.like_post .like_title {
+  font-weight: bold; }
+
+li.like_post .like_caption {
+  display: none; }
+
+li.like_post .post_info_bottom {
+  margin: 10px 0 0 0;
+  display: block !important; }
+
 @media all and (max-width: 768px) {
   .break {
     border-top: 0;
