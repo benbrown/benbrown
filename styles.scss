@@ -162,8 +162,29 @@
 
 /* Blog Stuff */
 
-	ol#blog {
+	#blog {
+		padding-top: 50px;
 		
+	}
+
+	header#blog_header {
+
+			width: 90%;
+			max-width: 600px;
+			margin: 0px auto;
+					
+			img { 
+				width: 25%;
+				margin-right: 2.5%;
+				max-width: 100px;
+				float: left;
+			}
+		
+	}
+
+	ol#posts {
+		
+		clear:both;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;

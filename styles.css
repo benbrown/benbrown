@@ -109,17 +109,31 @@ ul {
   text-align: center; }
 
 /* Blog Stuff */
-ol#blog {
+#blog {
+  padding-top: 50px; }
+
+header#blog_header {
+  width: 90%;
+  max-width: 600px;
+  margin: 0px auto; }
+  header#blog_header img {
+    width: 25%;
+    margin-right: 2.5%;
+    max-width: 100px;
+    float: left; }
+
+ol#posts {
+  clear: both;
   list-style-type: none;
   margin: 0;
   padding: 0; }
-  ol#blog .post {
+  ol#posts .post {
     width: 90%;
     max-width: 600px;
     margin: 0px auto; }
-    ol#blog .post.video {
+    ol#posts .post.video {
       max-width: 1000px; }
-    ol#blog .post.photo {
+    ol#posts .post.photo {
       max-width: 1000px; }
 
 ul#likes {
