@@ -164,6 +164,10 @@
 
 	#blog {
 		
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
 		.post {
 			width: 90%;
 			max-width: 600px;
