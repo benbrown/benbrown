@@ -172,6 +172,8 @@
 			width: 90%;
 			max-width: 600px;
 			margin: 0px auto;
+			padding-bottom: 20px;
+			margin-bottom:20px;
 			border-bottom: 1px dashed $secondary_color;
 					
 			img { 
@@ -198,6 +200,10 @@
 			&.video {
 				
 				max-width: 1000px;
+				
+				embed,object,video {
+					margin: 0px auto;
+				}
 				
 			}
 

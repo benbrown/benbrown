@@ -116,6 +116,8 @@ header#blog_header {
   width: 90%;
   max-width: 600px;
   margin: 0px auto;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px dashed #cccccc; }
   header#blog_header img {
     width: 25%;
@@ -134,6 +136,8 @@ ol#posts {
     margin: 0px auto; }
     ol#posts .post.video {
       max-width: 1000px; }
+      ol#posts .post.video embed, ol#posts .post.video object, ol#posts .post.video video {
+        margin: 0px auto; }
     ol#posts .post.photo {
       max-width: 1000px; }
 
